@@ -7,22 +7,22 @@
 
 
 import helpers
-import basicFunctions as bf
+import taskSpecificFunctions as tsf
 
 
-rows = 8
-columns = 8
+ROWS = 8
+COLUMNS = 8
 
 
-ChessTableMatrix = [[0 for _ in range(rows)] for _ in range(columns)]
+chess_table_matrix = [[0 for _ in range(ROWS)] for _ in range(COLUMNS)]
 
-bf.make_pc_suffer_and_enter_values(ChessTableMatrix, rows, columns)
+tsf.make_pc_suffer_and_enter_values(chess_table_matrix, ROWS, COLUMNS)
 
-for row in ChessTableMatrix:
+for row in chess_table_matrix:
     print(' '.join(map(str, row)))
 
-if helpers.check_if_main_diagonal_is_symmetrical(ChessTableMatrix, rows, columns):
-    print(f"Index of the largest average row is: {bf.find_largest_average_row(ChessTableMatrix, rows, columns)}")
+if helpers.check_if_main_diagonal_is_symmetrical(chess_table_matrix, ROWS, COLUMNS):
+    print(f"Index of the largest average row is: {tsf.find_largest_average_row(chess_table_matrix, ROWS, COLUMNS)}")
 else:
-    print(f"Index of the smallest average column is: {bf.find_smallest_average_column(ChessTableMatrix, rows, columns)}")
+    print(f"Index of the smallest average column is: {tsf.find_smallest_average_column(chess_table_matrix, ROWS, COLUMNS)}")
 
