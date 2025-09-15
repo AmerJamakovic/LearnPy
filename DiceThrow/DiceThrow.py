@@ -7,17 +7,17 @@
 
 import random as r
 
-SameNumbersTwoTimes=False
-numberOfThrows=0
+same_numbers_two_times=False
+number_of_throws=0
 
 
-while not SameNumbersTwoTimes:
-    numberOfThrows += 1
-    ThreeDice = [r.randint(1, 6), r.randint(1, 6), r.randint(1, 6)]
-    if ThreeDice[0]==ThreeDice[1] and ThreeDice[0]==ThreeDice[2]:
-        FirstSameThrow=ThreeDice
-        ThreeDice = [r.randint(1, 6), r.randint(1, 6), r.randint(1, 6)]
-        if ThreeDice[0]==ThreeDice[1] and ThreeDice[0]==ThreeDice[2]:
-            SameNumbersTwoTimes=True
-            print(f"Dice was thrown {numberOfThrows} times. First time you got {FirstSameThrow} and second time you got {ThreeDice}")
+while not same_numbers_two_times:
+    number_of_throws += 1
+    three_dice = [r.randint(1, 6), r.randint(1, 6), r.randint(1, 6)]
+    if three_dice[0]==three_dice[1] and three_dice[0]==three_dice[2]:
+        first_same_throw=three_dice
+        three_dice = [r.randint(1, 6), r.randint(1, 6), r.randint(1, 6)]
+        if three_dice[0]==three_dice[1] and three_dice[0]==three_dice[2]:
+            same_numbers_two_times=True
+            print(f"Dice was thrown {number_of_throws} times. First time you got {first_same_throw} and second time you got {three_dice}")
         

@@ -2,7 +2,7 @@
 #Unos znamenaka se prekida kada se unese broj manji od 0 ili veći od 9.
 #Ispisati poruku ukoliko je dobiveni broj savršen.
 
-def IsString(value: str)->bool:
+def is_string(value: str)->bool:
     try:
         int(value)
         return True
@@ -10,10 +10,10 @@ def IsString(value: str)->bool:
         return False
 
 
-def UserInputFunc(input_valid_for_ending:bool=False,final_value:int=0)->int:
+def user_input_func(input_valid_for_ending:bool=False, final_value:int=0)->int:
     while not input_valid_for_ending:
         user_input = input("Enter a number: ")
-        if IsString(user_input):
+        if is_string(user_input):
             if int(user_input) <= 0 or int(user_input) >= 10:
                 input_valid_for_ending = True
                 break
@@ -25,22 +25,22 @@ def UserInputFunc(input_valid_for_ending:bool=False,final_value:int=0)->int:
 
     return final_value
 
-def IsPerfectNumber(number:int)->bool:
-    ifSameTrue=0
+def is_perfect_number(number:int)->bool:
+    if_same_true=0
     for value in range(1,float.__floor__(number/2)+1):
         if number%value==0:
-            ifSameTrue+=value
+            if_same_true+=value
         else:
             continue
-    if ifSameTrue==number:
+    if if_same_true==number:
         return True
     else:
         return False
 
 
 def main():
-    number = UserInputFunc()
-    if IsPerfectNumber(number):
+    number = user_input_func()
+    if is_perfect_number(number):
         print(f"Final number is {number} and it's a perfect number.")
     else:
         print(f"Final number is {number} and it's NOT a perfect number.")
